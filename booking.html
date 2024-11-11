@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Appointment Booking</title>
+    <link rel="stylesheet" href="booking.css">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <h1>MyDoc+</h1>
+            <div class="nav-links">
+                <button>Book Appointment</button>
+                <button>Health Feed</button>
+                <button>For Doctors</button>
+                <button>Login/Signup</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="filter-panel">
+            <h3>Filters</h3>
+            <input type="text" placeholder="Patient Name">
+            <input type="text" placeholder="Mobile Number">
+            <select>
+                <option selected>City</option>
+                <option>Lucknow</option>
+                <option>Delhi</option>
+                <option>Mumbai</option>
+            </select>
+            <select>
+                <option selected>Disease</option>
+                <option>Gynaecology</option>
+                <option>Cardiology</option>
+                <option>Dermatology</option>
+            </select>
+            <button class="book-btn">Book Free Appointment</button>
+        </aside>
+
+        <main class="doctor-list">
+            <div class="doctor-card">
+                <h2>Dr. Amit Agrawal</h2>
+                <p>Gynaecologist • 14 Years Experience</p>
+                <p>₹ 500 at clinic</p>
+                <p>Pristyn Care Clinic, Mumbai</p>
+                <p><strong>Next Available Slot:</strong> 10:00 AM - 07:00 PM, MON</p>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+
+            <div class="doctor-card">
+                <h2>Dr. Neha Sharma</h2>
+                <p>Gynaecologist • 10 Years Experience</p>
+                <p>₹ 500 at clinic</p>
+                <p>Pristyn Care Clinic, Delhi</p>
+                <p><strong>Next Available Slot:</strong> 05:00 PM - 08:00 PM, MON</p>
+                <button class="book-btn">Book Appointment</button>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 MyDoc+. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

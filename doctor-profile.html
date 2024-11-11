@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profiles - HealthConnect</title>
+    <link rel="stylesheet" href="doctor-profile-styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>HealthConnect</h1>
+        <h2 id="specialty-name">Specialty</h2>
+    </header>
+
+    <div class="doctor-container" id="doctor-list">
+        <!-- Doctor profiles will be inserted here by JavaScript -->
+    </div>
+
+    <script>
+        // Get the selected specialty from localStorage
+        const specialty = localStorage.getItem('selectedSpecialty');
+        document.getElementById('specialty-name').textContent = `${specialty} Specialists`;
+
+        
+        const doctors = {
+            "Cardiology": [
+                { name: "Dr. Rajesh Gupta", bio: "Expert in heart and cardiovascular diseases", availability: ["10:00 AM", "2:00 PM", "4:00 PM"] },
+                { name: "Dr. Anjali Sharma", bio: "Specialist in heart health and prevention", availability: ["11:00 AM", "1:00 PM", "3:00 PM"] },
+                { name: "Dr. Vikram Patil", bio: "Heart disease treatment specialist", availability: ["9:00 AM", "12:00 PM", "3:00 PM"] },
+                { name: "Dr. Neha Desai", bio: "Cardiovascular and heart rhythm expert", availability: ["10:30 AM", "1:30 PM", "4:30 PM"] },
+                { name: "Dr. Arvind Rao", bio: "Prevention and treatment of cardiovascular diseases", availability: ["8:00 AM", "11:00 AM", "2:00 PM"] }
+            ],
+            "Dermatology": [
+                { name: "Dr. Sunita Kapoor", bio: "Expert in skin care and dermatological treatments", availability: ["9:30 AM", "12:30 PM", "3:30 PM"] },
+                { name: "Dr. Kiran Singh", bio: "Specialist in skin diseases and care", availability: ["10:00 AM", "1:00 PM", "4:00 PM"] },
+                { name: "Dr. Meera Bose", bio: "Skincare and cosmetic dermatology expert", availability: ["9:00 AM", "11:30 AM", "2:30 PM"] },
+                { name: "Dr. Rakesh Malhotra", bio: "Specializes in skin allergies and infections", availability: ["10:30 AM", "12:30 PM", "4:30 PM"] },
+                { name: "Dr. Priya Nair", bio: "Comprehensive dermatology and skincare solutions", availability: ["8:00 AM", "11:00 AM", "3:00 PM"] }
+            ],
+            "Pediatrics": [
+                { name: "Dr. Manish Jain", bio: "Expert in child health and preventive care", availability: ["9:00 AM", "1:00 PM", "4:00 PM"] },
+                { name: "Dr. Suman Mehta", bio: "Specialist in pediatric diseases and growth", availability: ["10:30 AM", "2:30 PM", "5:30 PM"] },
+                { name: "Dr. Ashok Verma", bio: "Child development and wellness expert", availability: ["9:30 AM", "12:30 PM", "3:30 PM"] },
+                { name: "Dr. Kavita Iyer", bio: "Pediatric emergency and immunization specialist", availability: ["8:30 AM", "11:30 AM", "2:30 PM"] },
+                { name: "Dr. Rohit Khanna", bio: "Newborn care and nutritional guidance", availability: ["10:00 AM", "1:00 PM", "3:00 PM"] }
+            ],
+            "Orthopedics": [
+                { name: "Dr. Ravi Shankar", bio: "Specializes in bone and joint treatments", availability: ["9:00 AM", "12:00 PM", "3:00 PM"] },
+                { name: "Dr. Meena Kulkarni", bio: "Expert in arthritis and joint replacement", availability: ["10:30 AM", "1:30 PM", "4:30 PM"] },
+                { name: "Dr. Amitabh Rao", bio: "Spine surgery and rehabilitation specialist", availability: ["9:30 AM", "12:30 PM", "3:30 PM"] },
+                { name: "Dr. Preeti Singh", bio: "Focuses on sports injuries and recovery", availability: ["8:30 AM", "11:30 AM", "2:30 PM"] },
+                { name: "Dr. Suresh Agarwal", bio: "Bone health and orthopedic trauma specialist", availability: ["10:00 AM", "1:00 PM", "4:00 PM"] }
+            ],
+            "Neurology": [
+                { name: "Dr. Rekha Menon", bio: "Brain and nervous system expert", availability: ["9:00 AM", "11:00 AM", "3:00 PM"] },
+                { name: "Dr. Anil Kumar", bio: "Specialist in neurological disorders", availability: ["10:30 AM", "1:30 PM", "4:30 PM"] },
+                { name: "Dr. Sujata Bhatt", bio: "Epilepsy and neuro-rehabilitation specialist", availability: ["9:30 AM", "12:30 PM", "2:30 PM"] },
+                { name: "Dr. Piyush Chawla", bio: "Stroke and neuromuscular disorder expert", availability: ["10:00 AM", "12:00 PM", "4:00 PM"] },
+                { name: "Dr. Ritu Verma", bio: "Neurodevelopment and brain injury specialist", availability: ["8:30 AM", "11:30 AM", "2:30 PM"] }
+            ]
+        };
+
+        // Display doctors based on selected specialty
+        const doctorList = doctors[specialty] || [];
+        const doctorContainer = document.getElementById('doctor-list');
+
+        doctorList.forEach(doctor => {
+            const doctorCard = document.createElement('div');
+            doctorCard.className = 'doctor-card';
+
+            doctorCard.innerHTML = `
+                <h3>${doctor.name}</h3>
+                <p>${doctor.bio}</p>
+                <h4>Available Times</h4>
+                <ul>${doctor.availability.map(time => `<li>${time}</li>`).join('')}</ul>
+                <button onclick="bookAppointment('${doctor.name}')">Book Appointment</button>
+            `;
+
+            doctorContainer.appendChild(doctorCard);
+        });
+
+        function bookAppointment(doctorName) {
+            alert(`Booking an appointment with ${doctorName}...`);
+            // Add functionality to book the appointment
+            function bookAppointment(doctorName) {
+        // Redirect to appointment.html with the doctor's name as a URL parameter
+        window.location.href = `appointment.html?doctor=${encodeURIComponent(doctorName)}`;
+    }
+        }
+    </script>
+    <script>
+     // Function to load doctor profile
+     function loadDoctorProfile() {
+         // Get doctor name from URL parameters (query string)
+         const params = new URLSearchParams(window.location.search);
+         const doctorName = params.get("doctor");
+
+         if (doctorProfiles[doctorName]) {
+             document.getElementById("doctor-name").textContent = doctorName;
+             document.getElementById("specialty").textContent = "Specialty: " + doctorProfiles[doctorName].specialty;
+             document.getElementById("availability").textContent = "Availability: " + doctorProfiles[doctorName].availability;
+             document.getElementById("description").textContent = doctorProfiles[doctorName].description;
+         } else {
+             document.getElementById("doctor-name").textContent = "Doctor not found";
+         }
+     }
+
+     // Function to navigate to the booking page
+     function bookAppointment() {
+         const params = new URLSearchParams(window.location.search);
+         const doctorName = params.get("doctor");
+         window.location.href = `appointment.html?doctor=${encodeURIComponent(doctorName)}`;
+     }
+
+     // Load the doctor profile when the page is loaded
+     window.onload = loadDoctorProfile;
+ </script>
+</body>
+</html>

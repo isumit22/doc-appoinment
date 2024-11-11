@@ -1,0 +1,87 @@
+/* Reset styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+}
+
+/* Header */
+.header {
+    background-color: #004d40;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    margin: 0;
+}
+
+.header nav button {
+    background-color: #00796b;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.header nav button:hover {
+    background-color: #004d40;
+}
+
+/* Dashboard container */
+.dashboard-container {
+    max-width: 800px;
+    margin: 2em auto;
+    text-align: center;
+    padding: 1em;
+}
+
+.dashboard-container h2 {
+    color: #004d40;
+    margin-bottom: 0.5em;
+}
+
+.dashboard-container p {
+    margin-bottom: 2em;
+    color: #666;
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5em;
+}
+
+.card {
+    background-color: #fff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.card h3 {
+    color: #004d40;
+    margin-bottom: 0.5em;
+}
+
+.card p {
+    color: #555;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}

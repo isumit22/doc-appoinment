@@ -1,0 +1,36 @@
+<!-- confirm.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Confirmation | HealthConnect</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    
+
+    <h1>Appointment Confirmed!</h1>
+    <h4>Thank you for booking an appointment. Here are your details:</h4>
+<br><br>
+    <div class="appointment-details">
+        <p><strong>Doctor:</strong> <span id="doctor-name"></span></p>
+        <p><strong>Date:</strong> <span id="appointment-date"></span></p>
+        <p><strong>Time Slot:</strong> <span id="time-slot"></span></p>
+        <p><strong>Your Name:</strong> <span id="patient-name"></span></p>
+        <p><strong>Email:</strong> <span id="patient-email"></span></p>
+    </div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <a href="index.html" class="button">Return to Home</a>
+
+    <script>
+        // Retrieve appointment details from the query parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('doctor-name').textContent = urlParams.get('doctor');
+        document.getElementById('appointment-date').textContent = urlParams.get('date');
+        document.getElementById('time-slot').textContent = urlParams.get('time');
+        document.getElementById('patient-name').textContent = urlParams.get('patient-name');
+        document.getElementById('patient-email').textContent = urlParams.get('patient-email');
+    </script>
+</body>
+</html>

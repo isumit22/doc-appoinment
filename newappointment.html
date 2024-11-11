@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | HealthConnect</title>
+    <link rel="stylesheet" href="appointment.css">
+</head>
+<body>
+    <header>
+        <div class="logo">HealthConnect</div>
+        <nav>
+            <div class="nav-item">Book Appointment
+                <div class="dropdown">
+                    <a href="#">Nearby Clinics</a>
+                    <a href="#">Specialists</a>
+                    <a href="#">Emergency Care</a>
+                </div>
+            </div>
+            <div class="nav-item">Treatment
+                <div class="dropdown">
+                    <a href="#">Cardiology</a>
+                    <a href="#">Dermatology</a>
+                    <a href="#">Psychiatry</a>
+                    <a href="#">Neurology</a>
+                    <a href="#">Orthopedics</a>
+                </div>
+            </div>
+            <a href="index.html"><div class="nav-item">Home</div></a>
+            <div class="nav-item">Surgery Plans</div>
+            <div class="nav-item">Login/Sign-up
+                <div class="dropdown">
+                    <a href="#">Login</a>
+                    <a href="#">Sign-up</a>
+                </div> 
+            </div>  
+        </nav>
+    </header>
+
+    <h2>Book an Appointment</h2>
+
+    <form action="confirm.html" method="GET" class="appointment-form">
+        <label for="patient-name">Your Name:</label>
+        <input type="text" id="patient-name" name="patient-name" placeholder="Enter your name" required>
+
+        <label for="doctor">Select Doctor:</label>
+        <select id="doctor" name="doctor" required onchange="updateSpecialty()">
+            <option value="" disabled selected>Select Doctor</option>
+            <option value="Dr. Amit Agarwal">Dr. Amit Agarwal (Cardiology)</option>
+            <option value="Dr. Sneha Kapoor">Dr. Sneha Kapoor (Dermatology)</option>
+            <option value="Dr. Rajesh Verma">Dr. Rajesh Verma (Orthopedics)</option>
+            <option value="Dr. Anjali Sharma">Dr. Anjali Sharma (Neurology)</option>
+            <option value="Dr. Priya Nair">Dr. Priya Nair (Psychiatry)</option>
+            <option value="Dr. Sanjay Mehta">Dr. Sanjay Mehta (Pediatrics)</option>
+        </select>
+
+        <label for="specialty">Specialty:</label>
+        <input type="text" id="specialty" name="specialty" placeholder="Specialty" readonly>
+
+        <label for="date">Select Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Select Time Slot:</label>
+        <select id="time" name="time" required>
+            <option value="" disabled selected>Select Time Slot</option>
+            <option value="09:00 AM - 10:00 AM">09:00 AM - 10:00 AM</option>
+            <option value="10:00 AM - 11:00 AM">10:00 AM - 11:00 AM</option>
+            <option value="02:00 PM - 03:00 PM">02:00 PM - 03:00 PM</option>
+            <option value="03:00 PM - 04:00 PM">03:00 PM - 04:00 PM</option>
+        </select>
+
+        <label for="patient-email">Your Email:</label>
+        <input type="email" id="patient-email" name="patient-email" placeholder="Enter your email" required>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <script>
+        function updateSpecialty() {
+            const doctorSelect = document.getElementById('doctor');
+            const specialtyInput = document.getElementById('specialty');
+
+            // Mapping of doctors to their specialties
+            const doctorSpecialties = {
+                "Dr. Amit Agarwal": "Cardiology",
+                "Dr. Sneha Kapoor": "Dermatology",
+                "Dr. Rajesh Verma": "Orthopedics",
+                "Dr. Anjali Sharma": "Neurology",
+                "Dr. Priya Nair": "Psychiatry",
+                "Dr. Sanjay Mehta": "Pediatrics"
+            };
+            
+    // Function to pre-fill the doctor’s name from URL parameters
+    window.onload = function() {
+        const params = new URLSearchParams(window.location.search);
+        const doctorName = params.get("doctor");
+
+        if (doctorName) {
+            document.getElementById("doctor").value = doctorName;
+        }
+    };
+
+
+            // Get the selected doctor's name
+            const selectedDoctor = doctorSelect.value;
+
+            // Update the specialty input based on the selected doctor
+            specialtyInput.value = doctorSpecialties[selectedDoctor] || '';
+        }
+    </script>
+</body>
+</html>

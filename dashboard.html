@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - HealthConnect</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>HealthConnect</h1>
+        <nav>
+            <button onclick="logout()">Logout</button>
+        </nav>
+    </header>
+
+    <div class="dashboard-container">
+        <h2 id="welcome-message">Welcome to Your Dashboard</h2>
+        <p>Manage your appointments and consultations easily from here.</p>
+
+        <div class="card-container">
+            <div class="card" onclick="manageAppointments()">
+                <h3>Appointments</h3>
+                <p>View and manage your upcoming appointments.</p>
+            </div>
+
+            <div class="card" onclick="manageConsultations()">
+                <h3>Consultations</h3>
+                <p>Check details of your past consultations and reports.</p>
+            </div>
+
+            <div class="card" onclick="viewProfile()">
+                <h3>Profile</h3>
+                <p>View and edit your profile information.</p>
+            </div>
+
+            <div class="card" onclick="getHelp()">
+                <h3>Help & Support</h3>
+                <p>Contact support for any assistance.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load and display the username on the dashboard
+        document.addEventListener("DOMContentLoaded", () => {
+            const username = localStorage.getItem("username");
+            const welcomeMessage = document.getElementById("welcome-message");
+
+            if (username) {
+                welcomeMessage.textContent = `Welcome, ${username}!`;
+            } else {
+                welcomeMessage.textContent = "Welcome to Your Dashboard";
+            }
+        });
+
+        function manageAppointments() {
+            alert("Redirecting to Appointments Management...");
+            // Redirect to appointments management page
+        }
+
+        function manageConsultations() {
+            alert("Redirecting to Consultations Management...");
+            // Redirect to consultations management page
+        }
+
+        function viewProfile() {
+            alert("Redirecting to Profile...");
+            // Redirect to profile page
+        }
+
+        function getHelp() {
+            alert("Redirecting to Help & Support...");
+            // Redirect to support page
+        }
+
+        function logout() {
+            alert("Logging out...");
+            localStorage.removeItem("username");  // Clear username from storage
+            window.location.href = "login.html";  // Redirect to login page
+        }
+    </script>
+</body>
+</html>

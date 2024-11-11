@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choose a Specialty - HealthConnect</title>
+    <link rel="stylesheet" href="specialties-styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>HealthConnect</h1>
+        <p>Select a specialty to find expert doctors</p>
+       
+    </header>
+
+    <div class="specialty-container">
+        <!-- List of specialties -->
+        <div class="card" onclick="goToSpecialty('Cardiology')">
+            <h3>Cardiology</h3>
+            <p>Heart and cardiovascular specialists</p>
+        </div>
+
+        <div class="card" onclick="goToSpecialty('Dermatology')">
+            <h3>Dermatology</h3>
+            <p>Skin, hair, and nail care specialists</p>
+        </div>
+
+        <div class="card" onclick="goToSpecialty('Pediatrics')">
+            <h3>Pediatrics</h3>
+            <p>Child healthcare specialists</p>
+        </div>
+
+        <div class="card" onclick="goToSpecialty('Orthopedics')">
+            <h3>Orthopedics</h3>
+            <p>Bone and joint care specialists</p>
+        </div>
+
+        <div class="card" onclick="goToSpecialty('Neurology')">
+            <h3>Neurology</h3>
+            <p>Brain and nervous system specialists</p>
+        </div>
+
+        <!-- Add more specialties as needed -->
+    </div>
+
+    <script>
+        function goToSpecialty(specialty) {
+            // Save selected specialty in localStorage
+            localStorage.setItem('selectedSpecialty', specialty);
+            // Redirect to the doctor profile page
+            window.location.href = 'doctor-profile.html';
+        }
+    </script>
+    
+</body>
+
+</html>

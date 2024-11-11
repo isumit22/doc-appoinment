@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthConnect - Doctor Booking & Consultation</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #f0f2f5;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #00796b;
+            padding: 15px 20px;
+            color: #fff;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+        nav .nav-item {
+            position: relative;
+            cursor: pointer;
+            color: #e0f7fa;
+            font-size: 1em;
+        }
+        nav .nav-item:hover .dropdown {
+            display: block;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #fff;
+            color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            text-decoration: none;
+            color: #00796b;
+        }
+        .dropdown a:hover {
+            background-color: #e0f7fa;
+        }
+
+        /* Main Banner Section */
+        .banner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: #004d40;
+            color: #e0f2f1;
+            padding: 50px 20px;
+        }
+        .banner h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
+        }
+        .banner p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .search-container {
+            display: flex;
+            width: 100%;
+            max-width: 700px;
+        }
+        .search-input {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            font-size: 1em;
+        }
+        .search-button {
+            padding: 12px 20px;
+            background-color: #00796b;
+            color: #fff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 50px 20px;
+            background-color: #f5f5f5;
+            text-align: center;
+        }
+        .services h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #004d40;
+        }
+        .service-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .service-item {
+            width: 250px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            color: #00796b;
+        }
+        .service-item h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .service-item p {
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">HealthConnect</div>
+        <nav>
+            <div class="nav-item">Book Appointment
+                <div class="dropdown">
+                    <a href="#">Nearby Clinics</a>
+                    <a href="#">Specialists</a>
+                    <a href="#">Emergency Care</a>
+                </div>
+            </div>
+            <div class="nav-item">Treatment
+                <div class="dropdown">
+                    <a href="doctor-profile.html">Cardiology</a>
+                    <a href="doctor-profile.html">Dermatology</a>
+                    <a href="doctor-profile.html">Pediatrics</a>
+                    <a href="doctor-profile.html">Neurology</a>
+                    <a href="doctor-profile.html">Orthopedics</a>
+                </div>
+            </div>
+            <div class="nav-item">Health Advice</div>
+            <div class="nav-item">Surgery Plans</div>
+            <div class="nav-item">Login/Sign-up
+                <div class="dropdown">
+                    <a href="login.html">Login</a>
+                    <a href="login.html">Sign-up</a>
+                 </div> 
+                 </div>  
+        </nav>
+    </header>
+    
+    <!-- Banner Section -->
+    <section class="banner">
+        <h1>Connect with Doctors from Home</h1>
+        <p>Your health, our priority. Get trusted medical consultations anytime, anywhere.</p>
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search for health topics or doctors">
+            <a href="specialties.html"><button class="search-button">Search</button></a>
+       </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <h2>Our Services</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <h3>Online Consultation</h3>
+                <p>Connect with top doctors online for quick and convenient consultations.</p>
+            </div>
+            <div class="service-item">
+                <h3>In-Person Appointments</h3>
+                <p>Find and book appointments with trusted doctors and clinics near you.</p>
+            </div>
+            <div class="service-item">
+                <h3>Health Check-ups</h3>
+                <p>Get regular health check-ups and preventive care for a healthier future.</p>
+            </div>
+            <div class="service-item">
+                <h3>Emergency Care</h3>
+                <p>Access urgent care services for immediate assistance in emergencies.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seamless Rotating Tabs Example</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+        }
+
+        /* Section Header */
+        h2 {
+            font-size: 1.5em;
+            margin: 20px;
+            color: #333;
+        }
+
+        /* Carousel Container */
+        .carousel-container {
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+        }
+
+        /* Individual Carousel Item */
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: calc(100% * 5); /* Adjust to number of items */
+        }
+
+        .carousel-item {
+            position: relative;
+            flex: 1 0 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Overlay Effect */
+        .carousel-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        .carousel-item span {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Top Categories</h2>
+    <div class="carousel-container" id="carouselCategories">
+        <div class="carousel-slide">
+            <div class="carousel-item" style="background-image: url('/images/gynaecology-doctors-noida.jpg');">
+                <span>Gynaecologist</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/male-psychologist-female-patient.jpg');">
+                <span>Psychologist</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/dermi.jpg');">
+                <span>Dermatologist</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/Sexologist.webp');">
+                <span>Sexologist</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/cardiologyslider.jpg');">
+                <span>Cardiology</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/bsc-optometry-details.jpg');">
+                <span>Optometry</span>
+            </div>
+            <!-- Duplicate first item for seamless loop -->
+            <div class="carousel-item" style="background-image: url('/images/gynaecology-doctors-noida.jpg');">
+                <span>Gynaecologist</span>
+            </div>
+        </div>
+    </div>
+
+    <h2>Top Cities</h2>
+    <div class="carousel-container" id="carouselCities">
+        <div class="carousel-slide">
+            <div class="carousel-item" style="background-image: url('/images/about-bangalore.webp');">
+                <span>Bangalore</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/SleepMumbai3_4x3.avif');">
+                <span>Mumbai</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/Kumortuli876_1533714780.avif');">
+                <span>Kolkata</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/Chennai_Central.jpg');">
+                <span>Chennai</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/135.-Delhi.jpg');">
+                <span>Delhi</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/Things-to-Do-in-Lucknow.jpg');">
+                <span>Lucknow</span>
+            </div>
+            <div class="carousel-item" style="background-image: url('/images/surat-airport-in-gujarat-gets-cisf-security-cover.webp');">
+                <span>Surat</span>
+            </div>
+            <!-- Duplicate first item for seamless loop -->
+            <div class="carousel-item" style="background-image: url('/images/about-bangalore.webp');">
+                <span>Bangalore</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to set up auto-rotate for a given carousel
+        function autoRotateCarousel(carouselId) {
+            const carousel = document.getElementById(carouselId);
+            const slide = carousel.querySelector('.carousel-slide');
+            const items = slide.children;
+            const totalItems = items.length;
+            let index = 0;
+
+            setInterval(() => {
+                index++;
+                slide.style.transition = 'transform 0.5s ease-in-out';
+                slide.style.transform = `translateX(-${index * 100}%)`;
+
+                // Reset to seamless start after the last real item
+                if (index === totalItems - 1) {
+                    setTimeout(() => {
+                        slide.style.transition = 'none';
+                        slide.style.transform = 'translateX(0)';
+                        index = 0;
+                    }, 500); // Delay matches the transition duration
+                }
+            }, 3000);
+        }
+
+        // Initialize auto-rotate for both carousels
+        autoRotateCarousel('carouselCategories');
+        autoRotateCarousel('carouselCities');
+    </script>
+ <script>
+    function goToSpecialty(specialty) {
+        // Save selected specialty in localStorage
+        localStorage.setItem('selectedSpecialty', specialty);
+        // Redirect to the doctor profile page
+        window.location.href = 'doctor-profile.html';
+    }
+</script>
+</body>
+</html>
+
+    
+   
+    <!-- Footer -->
+    <footer>
+        &copy; 2024 HealthConnect. All rights reserved. | Privacy Policy | Terms of Service
+    </footer>
+
+</body>
+</html>
